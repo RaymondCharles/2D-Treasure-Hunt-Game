@@ -45,6 +45,6 @@ This README will guide you through the features of the game, recent updates, and
 
 - Added a Trobleshooting feature to check the area of the rectangle for collision with objects to help adjust values
 - Set the player to stand still position when WASD Keys are not pressed
-- 
+- Implemented Tile/Grid Based Movement to make character movements more smoother and avoid unessecary collision with objects
 
 Based on RyiSnow`s Blue Boy Adventure Game
