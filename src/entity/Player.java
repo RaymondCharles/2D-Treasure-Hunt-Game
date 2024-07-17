@@ -20,6 +20,8 @@ public class Player extends Entity
 
     public int hasKey = 0;
     int standCounter;
+    boolean moving = false;
+    int pixelCounter = 0;
 
     //constructor
     public Player(GamePanel gp, KeyHandler keyH)
@@ -30,13 +32,24 @@ public class Player extends Entity
         screenX = (gp.screenWidth/2) - (gp.tileSize/2);
         screenY = (gp.screenHeight/2) - (gp.tileSize/2);
 
-        solidArea = new Rectangle();
+        //Old
+        /*solidArea = new Rectangle();
         solidArea.x = 8;
         solidArea.y = 16;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
         solidArea.width = 32;
-        solidArea.height = 32;
+        solidArea.height = 32;*/
+
+        //Implementing tile/grid based movement
+
+        solidArea = new Rectangle();
+        solidArea.x = 1;
+        solidArea.y = 1;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
+        solidArea.width = 46;
+        solidArea.height = 46;
 
         setDefaultValues();
         getPlayerImage();
@@ -71,35 +84,51 @@ public class Player extends Entity
         }
     }
 
+    //Updated update() for tile/grid based movement
     public void update()
     {
-        if (keyH.upPressed == true || keyH.downPressed == true || keyH.leftPressed == true || keyH.rightPressed == true)
+        if (moving == false)
         {
-            if(keyH.upPressed == true)
+            if (keyH.upPressed == true || keyH.downPressed == true || keyH.leftPressed == true || keyH.rightPressed == true)
             {
-                direction = "up";
-            }
-            else if (keyH.downPressed == true)
-            {
-                direction = "down";
-            }
-            else if (keyH.leftPressed == true)
-            {
-                direction = "left";
-            }
-            else if (keyH.rightPressed == true)
-            {
-                direction = "right";
-            }
+                if(keyH.upPressed == true)
+                {
+                    direction = "up";
+                }
+                else if (keyH.downPressed == true)
+                {
+                    direction = "down";
+                }
+                else if (keyH.leftPressed == true)
+                {
+                    direction = "left";
+                }
+                else if (keyH.rightPressed == true)
+                {
+                    direction = "right";
+                }
 
-            //CHECK TILE COLLISION
-            collisionOn = false;
-            gp.cChecker.checkTile(this);
+                moving = true;
 
-            //CHECK OBJECT COLLISION
-            int objIndex = gp.cChecker.checkObject(this, true);
-            pickUpObject(objIndex);
+                //CHECK TILE COLLISION
+                collisionOn = false;
+                gp.cChecker.checkTile(this);
 
+                //CHECK OBJECT COLLISION
+                int objIndex = gp.cChecker.checkObject(this, true);
+                pickUpObject(objIndex);
+            }
+            //Set play to stand still position
+            else {
+                standCounter++;
+                if (standCounter == 20) {
+                    spriteNum = 1;
+                    standCounter = 0;
+                }
+            }
+        }
+        if (moving == true)
+        {
             //IF COLLISION IS FALSE, PLAYER CAN MOVE
             if (collisionOn == false)
             {
@@ -130,16 +159,14 @@ public class Player extends Entity
                 }
                 spriteCounter = 0;
             }
-        }
-        //Set play to stand still position
-        else {
-            standCounter++;
-            if (standCounter == 20)
-            {
-                spriteNum = 1;
-                standCounter = 0;
-            }
 
+            pixelCounter += speed;
+
+            if (pixelCounter == 48)
+            {
+                moving = false;
+                pixelCounter = 0;
+            }
         }
 
     }
@@ -235,9 +262,9 @@ public class Player extends Entity
         }
 
         //draws image on screen
-/*        g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+        g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
         //Troubleshotting Rectangle for collision - not enabled (Commented out)
-        g2.setColor(Color.red);
+       /* g2.setColor(Color.red);
         g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);*/
 
     }
