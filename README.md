@@ -43,6 +43,8 @@ This README will guide you through the features of the game, recent updates, and
 
 *Version 1.0.1*
 
-- Added a Trobleshooting feature to check the area of the rectangle for collision with objects to help adjust values 
+- Added a Trobleshooting feature to check the area of the rectangle for collision with objects to help adjust values
+- Set the player to stand still position when WASD Keys are not pressed
+- 
 
 Based on RyiSnow`s Blue Boy Adventure Game
