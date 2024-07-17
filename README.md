@@ -36,9 +36,9 @@ This README will guide you through the features of the game, recent updates, and
 
 *Version 1.0.0*
 
-New Map: A new map filled with trees, lakes, paths etc. in which you can explore different areas to find keys and treasure
-Character: Introducing the main character of the game - YOU!!!
-Bug Fixes: Fixed various bugs related to character movement and item collection.
-Performance Improvements: Optimized game performance for smoother gameplay and improved rendering performance
+- New Map: A new map filled with trees, lakes, paths etc. in which you can explore different areas to find keys and treasure
+- Character: Introducing the main character of the game - YOU!!!
+- Bug Fixes: Fixed various bugs related to character movement and item collection.
+- Performance Improvements: Optimized game performance for smoother gameplay and improved rendering performance
 
 Based on RyiSnow`s Blue Boy Adventure Game
