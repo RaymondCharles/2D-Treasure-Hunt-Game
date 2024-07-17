@@ -40,3 +40,5 @@ New Map: A new map filled with trees, lakes, paths etc. in which you can explore
 Character: Introducing the main character of the game - YOU!!!
 Bug Fixes: Fixed various bugs related to character movement and item collection.
 Performance Improvements: Optimized game performance for smoother gameplay and improved rendering performance
+
+Based on RyiSnow`s Blue Boy Adventure Game
