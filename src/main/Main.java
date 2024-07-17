@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 
 public class Main 
 {
+    //Runs the Game
 	public static void main(String[] args)
     {
         JFrame window = new JFrame();
