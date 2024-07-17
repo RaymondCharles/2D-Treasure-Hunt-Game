@@ -41,4 +41,8 @@ This README will guide you through the features of the game, recent updates, and
 - Bug Fixes: Fixed various bugs related to character movement and item collection.
 - Performance Improvements: Optimized game performance for smoother gameplay and improved rendering performance
 
+*Version 1.0.1*
+
+- Added a Trobleshooting feature to check the area of the rectangle for collision with objects to help adjust values 
+
 Based on RyiSnow`s Blue Boy Adventure Game
