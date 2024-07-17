@@ -19,6 +19,7 @@ public class Player extends Entity
     public final int screenY;
 
     public int hasKey = 0;
+    int standCounter;
 
     //constructor
     public Player(GamePanel gp, KeyHandler keyH)
@@ -129,6 +130,16 @@ public class Player extends Entity
                 }
                 spriteCounter = 0;
             }
+        }
+        //Set play to stand still position
+        else {
+            standCounter++;
+            if (standCounter == 20)
+            {
+                spriteNum = 1;
+                standCounter = 0;
+            }
+
         }
 
     }
