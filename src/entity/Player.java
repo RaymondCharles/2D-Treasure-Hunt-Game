@@ -224,7 +224,7 @@ public class Player extends Entity
         }
 
         //draws image on screen
-       /* g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+/*        g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
         //Troubleshotting Rectangle for collision - not enabled (Commented out)
         g2.setColor(Color.red);
         g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);*/
