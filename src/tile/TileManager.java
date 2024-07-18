@@ -1,6 +1,7 @@
 package tile;
 
 import main.GamePanel;
+import main.UtilityTool;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -30,7 +31,15 @@ public class TileManager
 
     public void getTileImage()
     {
-        try {
+        //Optimized Tile Setup
+        setUp(0, "grass", false);
+        setUp(1, "wall", true);
+        setUp(2, "water", true);
+        setUp(3, "earth", false);
+        setUp(4, "tree", true);
+        setUp(5, "sand", false);
+
+        /*try {
             tile[0] = new Tile();
             tile[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/grass.png"));
 
@@ -53,6 +62,21 @@ public class TileManager
             tile[5].image = ImageIO.read(getClass().getResourceAsStream("/tiles/sand.png"));
 
         } catch (IOException e)
+        {
+            e.printStackTrace();
+        }*/
+    }
+
+    public void setUp(int index, String imageName, boolean collision)
+    {
+        UtilityTool uTool = new UtilityTool();
+        try {
+            tile[index] = new Tile();
+            tile[index].image = ImageIO.read(getClass().getResourceAsStream("/tiles/" + imageName +".png"));
+            tile[index].image = uTool.scaleImage(tile[index].image, gp.tileSize, gp.tileSize);
+            tile[index].collision = collision;
+
+        }catch (IOException e)
         {
             e.printStackTrace();
         }
@@ -147,7 +171,7 @@ public class TileManager
                     worldY + gp.tileSize> gp.player.worldY - gp.player.screenY &&
                     worldY - gp.tileSize< gp.player.worldY + gp.player.screenY)
             {
-                g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+                g2.drawImage(tile[tileNum].image, screenX, screenY, null);
             }
 
             worldCol++;

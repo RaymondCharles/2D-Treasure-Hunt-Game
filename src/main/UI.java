@@ -26,7 +26,7 @@ public class UI
 
         Bauhaus93_40 = new Font("Bauhaus 93", Font.PLAIN,40);
         Bauhaus93_80B= new Font("Bauhaus 93", Font.BOLD,80);
-        OBJ_Key key = new OBJ_Key();
+        OBJ_Key key = new OBJ_Key(gp);
         keyImage = key.image;
     }
 

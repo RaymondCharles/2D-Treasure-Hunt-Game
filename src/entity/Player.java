@@ -2,6 +2,7 @@ package entity;
 
 import main.GamePanel;
 import main.KeyHandler;
+import main.UtilityTool;
 
 import javax.imageio.ImageIO;
 import javax.xml.namespace.QName;
@@ -66,7 +67,7 @@ public class Player extends Entity
 
     public void getPlayerImage()
     {
-        try {
+        /*try {
             up1 = ImageIO.read(getClass().getResourceAsStream("/player/boy_up_1.png"));
             up2 = ImageIO.read(getClass().getResourceAsStream("/player/boy_up_2.png"));
             down1 = ImageIO.read(getClass().getResourceAsStream("/player/boy_down_1.png"));
@@ -82,6 +83,33 @@ public class Player extends Entity
         {
             e.printStackTrace();
         }
+*/
+        //Optimized Player Setup
+        up1 = setup("boy_up_1");
+        up2 = setup("boy_up_2");
+        down1 = setup("boy_down_1");
+        down2 = setup("boy_down_2");
+        left1 = setup("boy_left_1");
+        left2 = setup("boy_left_2");
+        right1 = setup("boy_right_1");
+        right2 = setup("boy_right_2");
+
+    }
+
+    //Scaling Player Images
+    public BufferedImage setup(String imageName)
+    {
+        UtilityTool uTool = new UtilityTool();
+        BufferedImage image = null;
+
+        try {
+            image = ImageIO.read(getClass().getResourceAsStream("/player/" + imageName + ".png"));
+            image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
+        }catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        return image;
     }
 
     //Updated update() for tile/grid based movement
@@ -261,8 +289,8 @@ public class Player extends Entity
                 break;
         }
 
-        //draws image on screen
-        g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+        //draws image on screen, replaced gp.tilesize with width and height
+        g2.drawImage(image, screenX, screenY,null);
         //Troubleshotting Rectangle for collision - not enabled (Commented out)
        /* g2.setColor(Color.red);
         g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);*/
