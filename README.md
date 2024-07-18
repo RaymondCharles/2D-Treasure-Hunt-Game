@@ -32,9 +32,11 @@ This README will guide you through the features of the game, recent updates, and
 - Side Quests: Complete optional quests for additional rewards and storylines.
 - Achievements: Earn achievements for completing various challenges and milestones.
 
-***Recent Updates***
+****Recent Updates****
 
-*Version 1.0.0 - 17/07/24*
+Updates Every Week!!!
+
+*Version 1.0.0 - 17/07/24 - Game Release*
 
 - New Map: A new map filled with trees, lakes, paths etc. in which you can explore different areas to find keys and treasure
 - Character: Introducing the main character of the game - YOU!!!
