@@ -34,17 +34,23 @@ This README will guide you through the features of the game, recent updates, and
 
 ***Recent Updates***
 
-*Version 1.0.0*
+*Version 1.0.0 - 17/07/24*
 
 - New Map: A new map filled with trees, lakes, paths etc. in which you can explore different areas to find keys and treasure
 - Character: Introducing the main character of the game - YOU!!!
 - Bug Fixes: Fixed various bugs related to character movement and item collection.
 - Performance Improvements: Optimized game performance for smoother gameplay and improved rendering performance
 
-*Version 1.0.1*
+*Version 1.0.1 - 17/07/24*
 
 - Added a Trobleshooting feature to check the area of the rectangle for collision with objects to help adjust values
 - Set the player to stand still position when WASD Keys are not pressed
 - Implemented Tile/Grid Based Movement to make character movements more smoother and avoid unessecary collision with objects
+
+*Version 1.0.2 - 18/07/24*
+
+- Improved Rendering Perfomance: Reduced Draw Time by almost 25% to improve overall gaming experience
+- Added a debugging function (Press T) to check the current draw time
+- Scaling images of player and tiles for optimization
 
 Based on RyiSnow`s Blue Boy Adventure Game
