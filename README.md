@@ -55,4 +55,3 @@ Updates Every Week!!!
 - Added a debugging function (Press T) to check the current draw time
 - Scaling images of player and tiles for optimization
 
-Based on RyiSnow`s Blue Boy Adventure Game
